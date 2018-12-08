@@ -7,7 +7,7 @@ function saveBookmark(e) {
   var siteName = document.getElementById("siteName").value;
   var siteURL = document.getElementById("siteURL").value;
 
-  if(validateForm(siteName, siteURL)){
+  if(!validateForm(siteName, siteURL)){
     return false;
   }
 
@@ -98,7 +98,7 @@ function validateForm(siteName, siteURL){
   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   var regex = new RegExp(expression);
   
-  if(!siteName.match(regex)){
+  if(!siteURL.match(regex)){
     alert('Please enter a valid URL')
     return false;
   }
